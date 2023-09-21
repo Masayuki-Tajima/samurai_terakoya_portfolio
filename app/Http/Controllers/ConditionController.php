@@ -17,7 +17,7 @@ class ConditionController extends Controller
     {
         $conditions = Auth::user()->conditions;
 
-        return view('');
+        return view('conditions.index', compact('conditions'));
     }
 
     /**
