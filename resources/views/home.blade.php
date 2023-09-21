@@ -4,18 +4,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <h1>TOP</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+            <div id="cards">
+                <div class="card">
+                    <h2>体調管理</h2>
+                    <p>日々の体調の管理ができます。</p>
+                    <a href="#"><button>使ってみる</button></a>
                 </div>
+
+                <div class="card">
+                    <h2>タスク管理</h2>
+                    <p>タスクを可視化し、抜け漏れを防ぐことができます。</p>
+                    <a href="#"><button>使ってみる</button></a>
+                </div>
+
+
             </div>
         </div>
     </div>
