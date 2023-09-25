@@ -13,7 +13,7 @@
                     <th>日付</th>
                     <th>天気</th>
                     <th>気圧</th>
-                    <th>点数</th>
+                    <th>体調スコア</th>
                     <th>コメント</th>
                 </tr>
                 <tr>
@@ -25,7 +25,7 @@
                 </tr>
             </table>
 
-            <button>体調登録</button>
+            <a href="{{ route('conditions.create') }}">体調登録</a>
         </div>
     </div>
 </div>

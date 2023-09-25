@@ -14,7 +14,7 @@
                 <div class="card">
                     <h2>体調管理</h2>
                     <p>日々の体調の管理ができます。</p>
-                    <a href="{{ asset('/condition') }}"><button>使ってみる</button></a>
+                    <a href="{{ asset('/conditions/index') }}"><button>使ってみる</button></a>
                 </div>
 
                 <div class="card">
