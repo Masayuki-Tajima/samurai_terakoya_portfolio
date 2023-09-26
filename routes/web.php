@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConditionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/conditions/index', [App\Http\Controllers\ConditionController::class, 'index'])->name('conditions.index');
+Route::get('/conditions', [App\Http\Controllers\ConditionController::class, 'index'])->name('conditions.index');
 Route::get('/conditions/create', [App\Http\Controllers\ConditionController::class, 'create'])->name('conditions.create');
-Route::post('/conditions/index', [App\Http\Controllers\ConditionController::class], 'store')->name('conditions.store');
+Route::post('/conditions', [App\Http\Controllers\ConditionController::class], 'store')->name('conditions.store');

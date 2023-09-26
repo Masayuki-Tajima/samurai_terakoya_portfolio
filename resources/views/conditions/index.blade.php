@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
+@if(session('flash_message'))
+    <p>{{ session('flash_message') }}</p>
+@endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
