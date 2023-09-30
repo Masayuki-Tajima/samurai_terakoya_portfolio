@@ -24,3 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/conditions', [App\Http\Controllers\ConditionController::class, 'index'])->name('conditions.index');
 Route::get('/conditions/create', [App\Http\Controllers\ConditionController::class, 'create'])->name('conditions.create');
 Route::post('/conditions', [App\Http\Controllers\ConditionController::class, 'store'])->name('conditions.store');
+
+Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');

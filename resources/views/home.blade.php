@@ -20,7 +20,7 @@
                 <div class="card">
                     <h2>タスク管理</h2>
                     <p>タスクを可視化し、抜け漏れを防ぐことができます。</p>
-                    <a href="#"><button>使ってみる</button></a>
+                    <a href="{{ route('tasks.index') }}"><button>使ってみる</button></a>
                 </div>
 
 
