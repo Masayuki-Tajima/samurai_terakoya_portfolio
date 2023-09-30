@@ -20,13 +20,15 @@
                     <th>体調スコア</th>
                     <th>コメント</th>
                 </tr>
+                @foreach($conditions as $condition)
                 <tr>
+                    <td>{{ $condition['filled_date'] }}</td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $condition['score'] }}</td>
+                    <td>{{ $condition['comment'] }}</td>
                 </tr>
+                @endforeach
             </table>
 
             <a href="{{ route('conditions.create') }}">体調登録</a>

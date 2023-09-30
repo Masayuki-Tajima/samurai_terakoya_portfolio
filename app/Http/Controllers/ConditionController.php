@@ -39,9 +39,10 @@ class ConditionController extends Controller
     public function store(Request $request)
     {
         $condition = new Condition();
-        $condition->date = $request->input('date');
+        $condition->user_id = Auth::id();
         $condition->score = $request->input('score');
         $condition->comment = $request->input('comment');
+        $condition->filled_date = $request->input('date');
         $condition->save();
 
         return redirect()->route('conditions.index')->with('flash_message', '登録が完了しました。');
