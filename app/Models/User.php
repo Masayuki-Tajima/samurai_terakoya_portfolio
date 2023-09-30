@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function conditions(){
         return $this->hasMany(Condition::class);
     }
+
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
 }
