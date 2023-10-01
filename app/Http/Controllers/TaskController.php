@@ -27,7 +27,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.create');
     }
 
     /**
@@ -38,7 +38,18 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'scheduled_start_date' => 'required',
+            'scheduled_end_date' => 'required',
+        ]);
+
+        $task = new Task();
+        $task->user_id = Auth::id();
+        $task->name = $request->input('name');
+        $task->description = $request->input('description');
+        $task->scheduled_start_date = $request->input('scheduled_start_date');
+        $task->scheduled_end_date = $request->input('scheduled_end_date');
     }
 
     /**

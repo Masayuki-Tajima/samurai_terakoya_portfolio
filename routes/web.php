@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConditionController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::get('/conditions/create', [App\Http\Controllers\ConditionController::clas
 Route::post('/conditions', [App\Http\Controllers\ConditionController::class, 'store'])->name('conditions.store');
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
+Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');
+Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');

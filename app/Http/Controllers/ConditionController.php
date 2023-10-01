@@ -38,6 +38,11 @@ class ConditionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'score' => 'required',
+            'date' => 'required',
+        ]);
+
         $condition = new Condition();
         $condition->user_id = Auth::id();
         $condition->score = $request->input('score');
