@@ -50,6 +50,9 @@ class TaskController extends Controller
         $task->description = $request->input('description');
         $task->scheduled_start_date = $request->input('scheduled_start_date');
         $task->scheduled_end_date = $request->input('scheduled_end_date');
+        $task->save();
+
+        return redirect()->route('tasks.index');
     }
 
     /**
