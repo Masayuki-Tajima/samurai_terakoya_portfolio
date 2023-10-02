@@ -29,3 +29,5 @@ Route::post('/conditions', [App\Http\Controllers\ConditionController::class, 'st
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
 Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');
 Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');
+Route::get('/tasks/{task}', [App\Http\Controllers\TaskController::class, 'edit'])->name('tasks.edit');
+Route::patch('/tasks/{task}', [App\Http\Controllers\TaskController::class, 'update'])->name('tasks.update');

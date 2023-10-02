@@ -19,6 +19,7 @@
                 @foreach($tasks as $task)
                 <tr>
                     <td>{{ $task['name'] }}</td>
+                    <td><a href="{{ route('tasks.edit', $task) }}">編集</a></td>
                 </tr>
                 @endforeach
             </table>

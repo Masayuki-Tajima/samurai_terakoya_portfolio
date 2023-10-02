@@ -74,7 +74,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit', compact('task'));
     }
 
     /**
@@ -86,7 +86,22 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'scheduled_start_date' => 'required',
+            'scheduled_end_date' => 'required',
+        ]);
+
+        $task->user_id = Auth::id();
+        $task->name = $request->input('name');
+        $task->description = $request->input('description');
+        $task->scheduled_start_date = $request->input('scheduled_start_date');
+        $task->scheduled_end_date = $request->input('scheduled_end_date');
+        $task->actual_start_date = $request->input('actual_start_date');
+        $task->actual_end_date = $request->input('actual_end_date');
+        $task->save();
+
+        return redirect()->route('tasks.index')->with('flash_message', 'タスクを編集しました。');
     }
 
     /**
