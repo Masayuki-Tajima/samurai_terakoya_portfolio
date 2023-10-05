@@ -16,7 +16,7 @@
                 <tr>
                     <th>日付</th>
                     <th>天気</th>
-                    <th>気圧</th>
+                    <th>気圧（hPa）</th>
                     <th>体調スコア</th>
                     <th>コメント</th>
                 </tr>
