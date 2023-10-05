@@ -23,7 +23,7 @@
                 @foreach($conditions as $condition)
                 <tr>
                     <td>{{ $condition['filled_date'] }}</td>
-                    <td>{{ $condition['weather'] }}</td>
+                    <td>{{ __($condition['weather']) }}</td>
                     <td>{{ $condition['pressure'] }}</td>
                     <td>{{ $condition['score'] }}</td>
                     <td>{{ $condition['comment'] }}</td>
