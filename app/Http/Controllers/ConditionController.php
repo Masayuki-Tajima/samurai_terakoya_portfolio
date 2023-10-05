@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Condition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
 
 class ConditionController extends Controller
 {
@@ -40,14 +41,30 @@ class ConditionController extends Controller
     {
         $request->validate([
             'score' => 'required',
-            'date' => 'required',
         ]);
 
+        //APIから天気と気圧を取得
+        $API_KEY = config('services.openweathermap.key');
+        $base_url = config('services.openweathermap.url');
+        $city = 'Tokyo';
+
+        $url = "$base_url?units=metric&q=$city&lang=fr&APPID=$API_KEY";
+        
+        // 接続
+        $client = new Client();
+        $response = $client->request('GET', $url);
+
+        $weather_data = $response->getBody();
+        $weather_data = json_decode($weather_data, true);
+
+        //テーブルへ書き込み
         $condition = new Condition();
         $condition->user_id = Auth::id();
         $condition->score = $request->input('score');
         $condition->comment = $request->input('comment');
-        $condition->filled_date = $request->input('date');
+        $condition->filled_date = date('Y-m-d');
+        $condition->weather = $weather_data["weather"][0]["main"];
+        $condition->pressure = $weather_data["main"]["pressure"];
         $condition->save();
 
         return redirect()->route('conditions.index')->with('flash_message', '登録が完了しました。');

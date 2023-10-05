@@ -14,8 +14,8 @@
                 @csrf
 
                 <div>
-                    <label for="date">登録したい日付</label>
-                    <input type="date" id="date" name="date">
+                    <label for="date">日付</label>
+                    <p><?= date('Y-m-d') ?></p>
                 </div>
                 
                 <div>
