@@ -33,4 +33,6 @@ Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->na
 Route::get('/tasks/{task}', [App\Http\Controllers\TaskController::class, 'edit'])->name('tasks.edit');
 Route::patch('/tasks/{task}', [App\Http\Controllers\TaskController::class, 'update'])->name('tasks.update');
 
+Route::delete('/tasks/{task}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('tasks.destroy');
+
 Route::get('/conditions/weather', [App\Http\Controllers\WeatherAPIController::class, 'index'])->name('weather.index');

@@ -19,11 +19,21 @@
                     <th>終了予定日</th>
                 </tr>
                 @foreach($tasks as $task)
+                {{-- タスクの削除用モーダル --}}
+                @include('modals.delete_task')
+
                 <tr>
                     <td>{{ $task['name'] }}</td>
                     <td>{{ $task['scheduled_start_date']}}</td>
                     <td>{{ $task['scheduled_end_date']}}</td>
                     <td><a href="{{ route('tasks.edit', $task) }}">編集</a></td>
+                    <td>
+                        <form action="{{ route('tasks.destroy', $task) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit">削除</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </table>

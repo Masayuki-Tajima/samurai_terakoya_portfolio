@@ -21,7 +21,7 @@
 
                 <div>
                     <label for="description">タスク内容</label>
-                    <textarea name="description" id="description" value="{{ $task->description }}"></textarea>
+                    <textarea name="description" id="description">{{ $task->description }}</textarea>
                 </div>
 
                 <div>
