@@ -16,9 +16,7 @@ use App\Http\Controllers\WeatherAPIController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
